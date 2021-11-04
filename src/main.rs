@@ -157,7 +157,7 @@ fn main() {
     // get filename from command line
     let mut args = std::env::args();
     let _ = args.next();
-    let filename = args.next().unwrap();
+    let filename = args.next().expect("No filename given");
 
     // read file
     let contents: String = fs::read_to_string(filename).unwrap().parse().unwrap();
